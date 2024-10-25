@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab 2</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .container {
+        max-width: 600px;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 50px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      .link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+      .dashboard {
+        margin-top: 20px;
+      }
+      .exercise {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        background: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Lab 2</h1>
+    </header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="">Labs</a>
+        <div class="dropdown-content">
+          <a href="lab1.html" class="lap">Lab 1</a>
+          <a href="lab2.html" class="lap">Lab 2</a>
+          <a href="lab3.html" class="lap">Lab 3</a>
+          <a href="./lab4_23130267_VoLeHuongQuynh/index.html" class="lap"
+            >Lab 4
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="container" id="login">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username/Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button onclick="login()">Login</button>
+      <a href="#" class="link">Forgot Password?</a>
+    </div>
+
+    <div class="container dashboard" id="dashboard" style="display: none">
+      <h2>Exercise Dashboard</h2>
+      <div class="exercise">
+        <h3>Exercise Title 1 (C)</h3>
+        <p>Short description of exercise 1.</p>
+        <p>Difficulty: Easy | Time Limit: 30 min | Points: 10</p>
+        <button onclick="selectExercise(1)">Select Exercise</button>
+      </div>
+      <div class="exercise">
+        <h3>Exercise Title 2 (Python)</h3>
+        <p>Short description of exercise 2.</p>
+        <p>Difficulty: Medium | Time Limit: 45 min | Points: 15</p>
+        <button onclick="selectExercise(2)">Select Exercise</button>
+      </div>
+      <!-- Add more exercises as needed -->
+    </div>
+
+    <script>
+      function login() {
+        // Authentication logic here (mockup)
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username && password) {
+          document.getElementById("login").style.display = "none";
+          document.getElementById("dashboard").style.display = "block";
+        } else {
+          alert("Please enter both username and password.");
+        }
+      }
+
+      function selectExercise(exerciseId) {
+        // Navigate to coding environment logic (mockup)
+        alert("Selected Exercise " + exerciseId);
+        // Redirect or load exercise coding environment here
+      }
+    </script>
+  </body>
+</html>

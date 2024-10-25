@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(52, 184, 42);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #247e0b;
+}
+
+li {
+  float: left;
+}
+li a {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover,
+.dropdown:hover {
+  background-color: rgb(52, 184, 42);
+}
+body {
+  background-image: url("http://giupban.com.vn/wp-content/uploads/2019/09/anh-nen-xanh-la-cho-power-point-dep2-1024x576.jpg");
+  background-repeat: no-repeat;
+  background-size: 100pc;
+}
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: rgb(24, 129, 94);
+}
+header {
+  position: relative;
+  height: 70px; /* Chiều cao của header */
+  background-image: url("https://tse2.mm.bing.net/th?id=OIP.Jv7TpRCJ--th6Tm21YenOAHaEo&pid=Api&P=0&h=180"); /* Đường dẫn tới ảnh */
+  background-size: cover; /* Để ảnh bao phủ toàn bộ header */
+  background-position: center; /* Căn giữa ảnh */
+}
+header h1 {
+  top: 20px;
+  color: rgb(20, 86, 47); /* Màu chữ */
+  text-shadow: 2px 2px 4px rgba(95, 206, 117, 0.7); /* Đổ bóng cho chữ */
+  font-size: 38px; /* Kích thước chữ */
+}
+section {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #159e59;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.technology {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background: #f9f9f9;
+  border: 1px solid #0ed84e;
+  border-radius: 5px;
+  padding: 15px;
+  flex: 1 1 30%;
+  min-width: 250px;
+}
+
+/* about */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+.skills,
+.experience,
+.education {
+  margin: 20px 0;
+}
+.skills ul,
+.experience ul,
+.education ul {
+  list-style-type: none;
+  padding: 0;
+}
+.skills li,
+.experience li,
+.education li {
+  background: #e2e2e2;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
