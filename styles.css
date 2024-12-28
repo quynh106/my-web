@@ -1,6 +1,16 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
+  background-repeat: no-repeat;
+  background-size: 100pc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url("./img/bg.jpg") no-repeat center center fixed; /* Đặt background */
+  background-size: cover; /* Đảm bảo background phủ đầy toàn bộ màn hình */
 }
 
 .dropdown-content {
@@ -59,17 +69,6 @@ li a.active {
   text-decoration: none;
 }
 
-body {
-  background-image: url(./img/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: 100pc;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 h1 {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -124,19 +123,22 @@ footer {
 .skills,
 .experience,
 .education {
-  margin: 20px 0;
+  margin: 5px 0;
 }
 .skills ul,
 .experience ul,
 .education ul {
   list-style-type: none;
-  padding: 0;
+  background: none;
 }
 .skills li,
 .experience li,
 .education li {
-  background: #e2e2e2;
-  margin: 5px 0;
+  background: #f9f9f9;
+  border: 1px solid #0ed84e;
+  border-left: 3.5px solid #0ed84e;
+  margin: 10px;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
