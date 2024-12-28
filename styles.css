@@ -26,6 +26,12 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+nav {
+  position: sticky;
+  top: 0;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -39,51 +45,51 @@ li {
 }
 li a {
   display: inline-block;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 li a:hover,
 .dropdown:hover {
-  background-color: rgb(52, 184, 42);
+  background-color: #34b82a;
 }
+li a.active {
+  background-color: #34b82a;
+  text-decoration: none;
+}
+
 body {
   background-image: url(./img/bg.jpg);
   background-repeat: no-repeat;
   background-size: 100pc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 h1 {
   text-align: center;
   font-family: Arial, sans-serif;
   color: rgb(24, 129, 94);
 }
-header {
-  position: relative;
-  height: 70px; /* Chiều cao của header */
-  background-image: url(./img/header.jpg); /* Đường dẫn tới ảnh */
-  background-size: cover; /* Để ảnh bao phủ toàn bộ header */
-  background-position: center; /* Căn giữa ảnh */
-}
-header h1 {
-  top: 20px;
-  color: rgb(20, 86, 47); /* Màu chữ */
-  text-shadow: 2px 2px 4px rgba(95, 206, 117, 0.7); /* Đổ bóng cho chữ */
-  font-size: 38px; /* Kích thước chữ */
-}
+
 section {
   padding: 20px;
   margin: 10px;
   border-radius: 5px;
 }
 footer {
+  color: #fff;
   text-align: center;
   padding: 10px 0;
-  background-color: #159e59;
-  position: fixed;
-  bottom: 0;
+  background-color: #247e0b;
+  margin-top: auto;
   width: 100%;
 }
+
 .technology {
   display: flex;
   flex-wrap: wrap;
@@ -96,6 +102,10 @@ footer {
   padding: 15px;
   flex: 1 1 30%;
   min-width: 250px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px);
 }
 
 /* about */
