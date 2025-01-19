@@ -4,36 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lab3</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <style>
-    .card{
-      z-index: 1;
-    }
-      .lesson-list {
-            cursor: pointer;
-          }
-          .active-lesson {
-            background-color: #e9ecef;
-            font-weight: bold;
-          }
-          #homePage {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: calc(100% - 40px);
-}
-#lessonsPage{
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: calc(100% - 40px);
-}
+      .d-none {
+        display: none !important;
+      }
 
+      .container {
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .col-md-4 {
+        flex: 1 1 30%;
+        min-width: 250px;
+        padding: 10px;
+      }
+
+      .card {
+        background: #f9f9f9;
+        border: 1px solid #0ed84e;
+        border-radius: 5px;
+        padding: 15px;
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        padding: 10px 15px;
+        background-color: #34b82a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #2b8e1f;
+      }
+
+      .lesson-list {
+        cursor: pointer;
+      }
+
+      .active-lesson {
+        background-color: #d4ffd4;
+        font-weight: bold;
+      }
+
+      #homePage {
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: calc(100% - 40px);
+      }
+
+      #lessonsPage {
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: calc(100% - 40px);
+      }
+
+      .list-group-item {
+        display: block; /* Đảm bảo các mục chiếm toàn bộ chiều rộng */
+        width: 100%; /* Kéo dài hết chiều rộng của khung cha */
+      }
     </style>
   </head>
   <body>
@@ -56,180 +104,195 @@
     </nav>
 
     <h1>Lab 3</h1>
-   
-     
-        <!-- Trang đầu  -->
-        <div id="homePage" class="container py-5 ">
-          <h1 class="text-center mb-4">Available Materials</h1>
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title">All about Django Python</h5>
-                  <button
-                    class="btn btn-primary view-materials"
-                    onclick="showLessons()"
-                  >
-                    View Materials
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title">Java Mock Project</h5>
-                  <button
-                    class="btn btn-primary view-materials"
-                    onclick="showLessons()"
-                  >
-                    View Materials
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title">Hibernate</h5>
-                  <button
-                    class="btn btn-primary view-materials"
-                    onclick="showLessons()"
-                  >
-                    View Materials
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title">FEE</h5>
-                  <button
-                    class="btn btn-primary view-materials"
-                    onclick="showLessons()"
-                  >
-                    View Materials
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title">Java Programming Language</h5>
-                  <button
-                    class="btn btn-primary view-materials"
-                    onclick="showLessons()"
-                  >
-                    View Materials
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title">Java Spring Framework</h5>
-                  <button
-                    class="btn btn-primary view-materials"
-                    onclick="showLessons()"
-                  >
-                    View Materials
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Add more cards as needed -->
-          </div>
-        </div>
-    
-        <!-- Trang bài học  -->
-        <div id="lessonsPage" class="container py-5 d-none">
-        
-          <div class="row">
-            <!-- Danh sách bài học -->
-            <div class="col-md-3">
-              <h5>Lessons</h5>
-              <ul class="list-group">
-                <li
-                  class="list-group-item lesson-list active-lesson"
-                  onclick="showContent('Introduction')"
-                >
-                  1. Introduction
-                </li>
-                <li
-                  class="list-group-item lesson-list"
-                  onclick="showContent('Setup')"
-                >
-                  2. Setting Up the Development Environment
-                </li>
-                <li
-                  class="list-group-item lesson-list"
-                  onclick="showContent('DjangoBasic')"
-                >
-                  3. Django Basic
-                </li>
-                <li
-                  class="list-group-item lesson-list"
-                  onclick="showContent('Advanced')"
-                >
-                  4. Django Advanced Concepts
-                </li>
-              </ul>
-            </div>
-            <!-- Nội dung bài học -->
-            <div class="col-md-9">
-              <h5 id="lessonTitle">Lesson Content</h5>
-              <div id="lessonContent">
-                <iframe
-                  src="https://docs.google.com/gview?embedded=true&url=https://example.com/yourfile.pdf"
-                  style="width: 100%; height: 500px"
-                  frameborder="0"
-                ></iframe>
-              </div>
+
+    <!-- Trang đầu  -->
+    <div id="homePage" class="container py-5">
+      <h1 class="text-center mb-4">Available Materials</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">All about Django Python</h5>
+              <button class="btn view-materials" onclick="showLessons()">
+                View Materials
+              </button>
             </div>
           </div>
-          <button class="btn btn-secondary mt-3 float-end" onclick="showHome()">
-            Back to list
-          </button>
         </div>
-    
-        <script>
-          // Chuyển sang giao diện bài học
-          function showLessons() {
-            document.getElementById("homePage").classList.add("d-none");
-            document.getElementById("lessonsPage").classList.remove("d-none");
-          }
-    
-          // Quay lại danh sách tài liệu
-          function showHome() {
-            document.getElementById("lessonsPage").classList.add("d-none");
-            document.getElementById("homePage").classList.remove("d-none");
-          }
-    
-          // Hiển thị nội dung bài học
-          function showContent(lesson) {
-            const lessonTitle = document.getElementById("lessonTitle");
-            const lessonContent = document.getElementById("lessonContent");
-    
-            document
-              .querySelectorAll(".lesson-list")
-              .forEach((item) => item.classList.remove("active-lesson"));
-            event.target.classList.add("active-lesson");
-    
-            if (lesson === "Introduction") {
-              lessonTitle.textContent = "1. Introduction";
-              lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson1.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
-            } else if (lesson === "Setup") {
-              lessonTitle.textContent = "2. Setting Up the Development Environment";
-              lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson2.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
-            }
-            // Thêm các bài học khác
-          }
-        </script>
-      </body>
-    </html>
-    
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Java Mock Project</h5>
+              <button class="btn view-materials" onclick="showLessons()">
+                View Materials
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Hibernate</h5>
+              <button class="btn view-materials" onclick="showLessons()">
+                View Materials
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">FEE</h5>
+              <button class="btn view-materials" onclick="showLessons()">
+                View Materials
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Java Programming Language</h5>
+              <button class="btn view-materials" onclick="showLessons()">
+                View Materials
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Java Spring Framework</h5>
+              <button class="btn view-materials" onclick="showLessons()">
+                View Materials
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trang bài học  -->
+    <div id="lessonsPage" class="container py-5 d-none">
+      <div
+        class="row"
+        style="
+          display: grid;
+          grid-template-columns: 1fr 3fr; /* Chia lưới 2 cột, cột đầu tiên chiếm 1 phần, cột thứ hai chiếm 3 phần */
+          gap: 20px; /* Khoảng cách giữa các phần tử */
+        "
+      >
+        <!-- Danh sách bài học -->
+        <div class="col-md-3">
+          <h5>Lessons</h5>
+          <ul
+            class="list-group"
+            style="
+              background: #fff;
+              padding: 0;
+              border: 1px solid #0ed84e;
+              border-radius: 5px;
+            "
+          >
+            <li
+              class="list-group-item lesson-list active-lesson"
+              style="
+                border-bottom: 1px solid #0ed84e;
+
+                padding: 15px;
+              "
+              onclick="showContent('Introduction')"
+            >
+              1. Introduction
+            </li>
+            <li
+              class="list-group-item lesson-list"
+              style="
+                border-bottom: 1px solid #0ed84e;
+
+                padding: 15px;
+              "
+              onclick="showContent('Setup')"
+            >
+              2. Setting Up the Development Environment
+            </li>
+            <li
+              class="list-group-item lesson-list"
+              style="
+                border-bottom: 1px solid #0ed84e;
+
+                padding: 15px;
+              "
+              onclick="showContent('DjangoBasic')"
+            >
+              3. Django Basic
+            </li>
+            <li
+              class="list-group-item lesson-list"
+              style="padding: 15px"
+              onclick="showContent('Advanced')"
+            >
+              4. Django Advanced Concepts
+            </li>
+          </ul>
+        </div>
+        <!-- Nội dung bài học -->
+        <div class="col-md-9">
+          <h5 id="lessonTitle">Lesson Content</h5>
+          <div id="lessonContent">
+            <iframe
+              src="https://docs.google.com/gview?embedded=true&url=https://example.com/yourfile.pdf"
+              style="width: 100%; height: 500px"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn"
+        style="float: inline-end; margin: 10px"
+        onclick="showHome()"
+      >
+        Back to list
+      </button>
+    </div>
+
+    <script>
+      function showLessons() {
+        document.getElementById("homePage").classList.add("d-none");
+        document.getElementById("lessonsPage").classList.remove("d-none");
+      }
+
+      function showHome() {
+        document.getElementById("lessonsPage").classList.add("d-none");
+        document.getElementById("homePage").classList.remove("d-none");
+      }
+
+      // Hiển thị nội dung bài học
+      function showContent(lesson) {
+        const lessonTitle = document.getElementById("lessonTitle");
+        const lessonContent = document.getElementById("lessonContent");
+
+        document
+          .querySelectorAll(".lesson-list")
+          .forEach((item) => item.classList.remove("active-lesson"));
+        event.target.classList.add("active-lesson");
+
+        if (lesson === "Introduction") {
+          lessonTitle.textContent = "1. Introduction";
+          lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson1.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
+        } else if (lesson === "Setup") {
+          lessonTitle.textContent = "2. Setting Up the Development Environment";
+          lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson2.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
+        } else if (lesson === "DjangoBasic") {
+          lessonTitle.textContent = " 3. Django Basic";
+          lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson2.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
+        } else if (lesson === "Advanced") {
+          lessonTitle.textContent = " 4. Django Advanced Concepts";
+          lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson2.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
+        }
+        // Thêm các bài học khác
+      }
+    </script>
   </body>
 </html>
