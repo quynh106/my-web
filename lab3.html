@@ -4,38 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lab3</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      main {
-        display: flex;
-      }
-      #menu {
-        width: 200px;
-        background-color: #f8f8f8;
-        padding: 10px;
-      }
-      #menu a {
-        display: block;
-        padding: 8px;
-        text-decoration: none;
-        color: #333;
-        border-bottom: 1px solid #ddd;
-      }
-      #menu a:hover {
-        background-color: #e0e0e0;
-      }
-      #content {
-        flex: 1;
-        padding: 20px;
-      }
-      #share-button {
-        margin-top: 20px;
-        padding: 10px 15px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
+     
+      .lesson-list {
+            cursor: pointer;
+          }
+          .active-lesson {
+            background-color: #e9ecef;
+            font-weight: bold;
+          }
+          #homePage {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: calc(100% - 40px);
+}
+#lessonsPage{
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: calc(100% - 40px);
+}
+
     </style>
   </head>
   <body>
@@ -58,66 +54,181 @@
     </nav>
 
     <h1>Lab 3</h1>
-    <main>
-      <div id="menu">
-        <h3>Danh Sách Bài Học</h3>
-        <a href="#" onclick="showLesson('lesson1')">Bài Học 1</a>
-        <a href="#" onclick="showLesson('lesson2')">Bài Học 2</a>
-        <a href="#" onclick="showLesson('lesson3')">Bài Học 3</a>
-        <!-- Thêm nhiều bài học nếu cần -->
-      </div>
-
-      <div id="content">
-        <h2>Chi Tiết Bài Giảng</h2>
-        <div id="lesson-content">
-          <p>Hãy chọn một bài học ở bên trái để xem chi tiết.</p>
+   
+      </head>
+      <body>
+        <!-- Trang đầu  -->
+        <div id="homePage" class="container py-5 ">
+          <h1 class="text-center mb-4">Available Materials</h1>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">All about Django Python</h5>
+                  <button
+                    class="btn btn-primary view-materials"
+                    onclick="showLessons()"
+                  >
+                    View Materials
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Java Mock Project</h5>
+                  <button
+                    class="btn btn-primary view-materials"
+                    onclick="showLessons()"
+                  >
+                    View Materials
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Hibernate</h5>
+                  <button
+                    class="btn btn-primary view-materials"
+                    onclick="showLessons()"
+                  >
+                    View Materials
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">FEE</h5>
+                  <button
+                    class="btn btn-primary view-materials"
+                    onclick="showLessons()"
+                  >
+                    View Materials
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Java Programming Language</h5>
+                  <button
+                    class="btn btn-primary view-materials"
+                    onclick="showLessons()"
+                  >
+                    View Materials
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Java Spring Framework</h5>
+                  <button
+                    class="btn btn-primary view-materials"
+                    onclick="showLessons()"
+                  >
+                    View Materials
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Add more cards as needed -->
+          </div>
         </div>
-      </div>
-    </main>
-
-    <script>
-      function showLesson(lesson) {
-        const lessonContent = document.getElementById("lesson-content");
-        switch (lesson) {
-          case "lesson1":
-            lessonContent.innerHTML = `
-                        <h3>Bài Học 1</h3>
-                      <p>Sách tham khảo: <a href="#">Link tài liệu tham khảo</a></p>
-        <p>Sách bài tập: <a href="#">Link sách bài tập</a></p>
-        <p>Sách nâng cao: <a href="#">Link sách nâng cao</a></p>
-         <button id="share-button" onclick="shareLesson()">Chia Sẻ Bài Giảng</button>
-                    `;
-            break;
-          case "lesson2":
-            lessonContent.innerHTML = `
-                        <h3>Bài Học 2</h3>
-                         <p>Sách tham khảo: <a href="#">Link tài liệu tham khảo</a></p>
-        <p>Sách bài tập: <a href="#">Link sách bài tập</a></p>
-        <p>Sách nâng cao: <a href="#">Link sách nâng cao</a></p>
-         <button id="share-button" onclick="shareLesson()">Chia Sẻ Bài Giảng</button>
-                    `;
-            break;
-          case "lesson3":
-            lessonContent.innerHTML = `
-                        <h3>Bài Học 3</h3>
-                       <p>Sách tham khảo: <a href="#">Link tài liệu tham khảo</a></p>
-        <p>Sách bài tập: <a href="#">Link sách bài tập</a></p>
-        <p>Sách nâng cao: <a href="#">Link sách nâng cao</a></p>
-         <button id="share-button" onclick="shareLesson()">Chia Sẻ Bài Giảng</button>
-                    `;
-            break;
-          default:
-            lessonContent.innerHTML = `
-                        <h3>Bài Học</h3>
-                        <p>Hãy chọn một bài học ở bên trái để xem chi tiết.</p>
-                    `;
-        }
-      }
-
-      function shareLesson() {
-        alert("Chia sẻ bài giảng thành công!");
-        // Thêm logic chia sẻ nếu cần
-      }
-    </script>
+    
+        <!-- Trang bài học  -->
+        <div id="lessonsPage" class="container py-5 d-none">
+        
+          <div class="row">
+            <!-- Danh sách bài học -->
+            <div class="col-md-3">
+              <h5>Lessons</h5>
+              <ul class="list-group">
+                <li
+                  class="list-group-item lesson-list active-lesson"
+                  onclick="showContent('Introduction')"
+                >
+                  1. Introduction
+                </li>
+                <li
+                  class="list-group-item lesson-list"
+                  onclick="showContent('Setup')"
+                >
+                  2. Setting Up the Development Environment
+                </li>
+                <li
+                  class="list-group-item lesson-list"
+                  onclick="showContent('DjangoBasic')"
+                >
+                  3. Django Basic
+                </li>
+                <li
+                  class="list-group-item lesson-list"
+                  onclick="showContent('Advanced')"
+                >
+                  4. Django Advanced Concepts
+                </li>
+              </ul>
+            </div>
+            <!-- Nội dung bài học -->
+            <div class="col-md-9">
+              <h5 id="lessonTitle">Lesson Content</h5>
+              <div id="lessonContent">
+                <iframe
+                  src="https://docs.google.com/gview?embedded=true&url=https://example.com/yourfile.pdf"
+                  style="width: 100%; height: 500px"
+                  frameborder="0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary mt-3 float-end" onclick="showHome()">
+            Back to list
+          </button>
+        </div>
+    
+        <script>
+          // Chuyển sang giao diện bài học
+          function showLessons() {
+            document.getElementById("homePage").classList.add("d-none");
+            document.getElementById("lessonsPage").classList.remove("d-none");
+          }
+    
+          // Quay lại danh sách tài liệu
+          function showHome() {
+            document.getElementById("lessonsPage").classList.add("d-none");
+            document.getElementById("homePage").classList.remove("d-none");
+          }
+    
+          // Hiển thị nội dung bài học
+          function showContent(lesson) {
+            const lessonTitle = document.getElementById("lessonTitle");
+            const lessonContent = document.getElementById("lessonContent");
+    
+            document
+              .querySelectorAll(".lesson-list")
+              .forEach((item) => item.classList.remove("active-lesson"));
+            event.target.classList.add("active-lesson");
+    
+            if (lesson === "Introduction") {
+              lessonTitle.textContent = "1. Introduction";
+              lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson1.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
+            } else if (lesson === "Setup") {
+              lessonTitle.textContent = "2. Setting Up the Development Environment";
+              lessonContent.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=https://example.com/lesson2.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>`;
+            }
+            // Thêm các bài học khác
+          }
+        </script>
+      </body>
+    </html>
+    
   </body>
 </html>
